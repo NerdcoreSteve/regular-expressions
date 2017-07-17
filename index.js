@@ -85,11 +85,14 @@ console.log(
 
 console.log(
     "name: Clark Kent, occupation: Reporter"
-        .replace(/^name: (\w+ \w+), occupation: (\w+)$/, '$1 is a $2'))
+        .replace(/name: (\w+ \w+), occupation: (\w+)/, '$1 is a $2'))
 
 console.log(
     'spinalCase("This Is Spinal Tap") should return "this-is-spinal-tap".'
         .replace(
-            /^(spinalCase\("([\w\s]+)"\) should return "([\w\s\-]+)".)$/,
+            /(spinalCase\("([\w\s]+)"\) should return "([\w\s\-]+)".)/,
             '    it(\'$1\',\n        () => expect(\'$2\').toEqual(\'$3\'))'))
 
+console.log(
+    '1. potatoes are my friends 2. You are a potato 3. You are my friend 4. Now and always you are my potato friend'
+        .split(/\d+\./))

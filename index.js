@@ -41,6 +41,8 @@ console.log(
 
 console.log('[1, 2, 1 + 2]'.match(/[\[\+]+/g))
 
+console.log('\\'.match(/\\/))
+
 console.log(
     'Potatoes are my friends, potatoes are my family.'
         .match(/^potatoes/gi))

@@ -25,6 +25,10 @@ console.log(
 console.log('111918829332911819238'.match(/1+/g))
 
 console.log(
+    'I am a banana, you are a bananana, everybody is a bananananana'
+        .match(/b(an)+a/g))
+
+console.log(
     'Why is 6 afraid of 7? Because 789!'
         .match(/[0-9]+/g))
 
@@ -96,3 +100,14 @@ console.log(
 console.log(
     '1. potatoes are my friends 2. You are a potato 3. You are my friend 4. Now and always you are my potato friend'
         .split(/\d+\./))
+
+console.log(
+    'Princess Peach rules the Mushroom Kingdom'
+        .replace(
+            /(Princess (?:Peach|Toadstool)) rules the (\w+) Kingdom/,
+            'Monarch: $1, Kingdom: $2'))
+
+console.log(
+    'Banana, bananas, banana, potato, banana. Aren\'t you glad bananas?'
+        .match(/banana./gi))
+

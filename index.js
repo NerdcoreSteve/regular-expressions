@@ -34,31 +34,67 @@ prints
 */
 
 console.log('I\'m Batman!'.match(/[aeiou]/g))
+/*
+prints
+[ 'a', 'a' ]
+*/
 
 console.log('I\'m Batman!'.match(/[aeiou]/gi))
+/*
+prints
+[ 'I', 'a', 'a' ]
+*/
 
 console.log('I\'m Batman!'.match(/[aeiou]/i))
+/*
+[ 'I', index: 0, input: 'I\'m Batman!' ]
+*/
 
 console.log(
     'Read or the owl will eat you.'
         .match(/[aeiou]+/g))
+/*
+prints
+[ 'ea', 'o', 'e', 'o', 'i', 'ea', 'ou' ]
+*/
 
 console.log('111918829332911819238'.match(/1+/g))
+/*
+prints
+[ '111', '1', '11', '1' ]
+*/
 
 console.log(
     'I am a banana, you are a bananana, everybody is a bananananana'
         .match(/b(an)+a/g))
+/*
+prints
+[ 'banana', 'bananana', 'bananananana' ]
+*/
 
 console.log(
     'Why is 6 afraid of 7? Because 789!'
         .match(/[0-9]+/g))
+/*
+prints
+[ '6', '7', '789' ]
+*/
 
 console.log(
     'We\'ll match 234, but not 190'
         .match(/[2-5]+/g))
+/*
+prints
+[ '234' ]
+*/
+
 console.log(
     'And we can match characters!'
         .match(/[a-z]+/gi))
+/*
+prints
+[ 'And', 'we', 'can', 'match', 'characters' ]
+*/
 
 console.log('[1, 2, 1 + 2]'.match(/[\[\+]+/g))
 

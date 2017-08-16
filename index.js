@@ -147,7 +147,7 @@ console.log(
         .match(/bu/gi))
 /*
 prints
-
+[ 'Bu', 'bu' ]
 */
 
 console.log(
@@ -155,7 +155,7 @@ console.log(
         .match(/^bu$/gi))
 /*
 prints
-
+null
 */
 
 console.log(
@@ -163,7 +163,7 @@ console.log(
         .match(/\d+/g))
 /*
 prints
-
+[ '13' ]
 */
 
 console.log(
@@ -171,7 +171,7 @@ console.log(
         .match(/(best|worst)/g))
 /*
 prints
-
+[ 'best', 'worst' ]
 */
 
 console.log(
@@ -179,7 +179,7 @@ console.log(
         .match(/(bryllyg|slythy|toves|gyre)/g))
 /*
 prints
-
+[ 'bryllyg', 'slythy', 'toves', 'gyre' ]
 */
 
 console.log(
@@ -187,7 +187,10 @@ console.log(
         .match(/get a (\w+)/))
 /*
 prints
-
+[ 'get a banana',
+  'banana',
+  index: 2,
+  input: 'I get a banana. You get a kiwi. Your mom is a potato' ]
 */
 
 console.log(
@@ -195,7 +198,7 @@ console.log(
         .match(/get a (\w+)/g))
 /*
 prints
-
+[ 'get a banana', 'get a kiwi' ]
 */
 
 const regexGlobalGroupCapture = (regex, input) => {
@@ -212,7 +215,7 @@ console.log(
         "I get a banana. You get a kiwi. Your mom is a potato"))
 /*
 prints
-
+[ 'banana', 'kiwi' ]
 */
 
 console.log(
@@ -220,7 +223,7 @@ console.log(
         .replace(/name: (\w+ \w+), occupation: (\w+)/, '$1 is a $2'))
 /*
 prints
-
+Clark Kent is a Reporter
 */
 
 console.log(
@@ -230,7 +233,8 @@ console.log(
             '    it(\'$1\',\n        () => expect(\'$2\').toEqual(\'$3\'))'))
 /*
 prints
-
+    it('spinalCase("This Is Spinal Tap") should return "this-is-spinal-tap".',
+        () => expect('This Is Spinal Tap').toEqual('this-is-spinal-tap'))
 */
 
 console.log(
@@ -238,7 +242,11 @@ console.log(
         .split(/\d+\./))
 /*
 prints
-
+[ '',
+  ' potatoes are my friends ',
+  ' You are a potato ',
+  ' You are my friend ',
+  ' Now and always you are my potato friend' ]
 */
 
 console.log(
@@ -248,7 +256,21 @@ console.log(
             'Monarch: $1, Kingdom: $2'))
 /*
 prints
+Monarch: Princess Peach, Kingdom: Mushroom
+*/
 
+console.log(  
+    [
+        'Batman',
+        'Superman',
+        'The Hulk'
+    ]
+        .map(x => x.match(/(ma*)/))
+        .filter(x => x) //filters out no matches
+        .map(x => x.input))
+/*
+prints
+[ 'Batman', 'Superman' ]
 */
 
 console.log(
@@ -256,5 +278,49 @@ console.log(
         .match(/banana./gi))
 /*
 prints
+[ 'Banana,', 'bananas', 'banana,', 'banana.', 'bananas' ]
+*/
 
+console.log(  
+    [
+        'Trying to only match Go go',
+        'Go go Power Rangers!',
+        'Go go gadget binoculars!',
+        'Go Teen Titans Go!'
+    ]
+        .map(x => x.match(/Go go.*/))
+        .filter(x => x)
+        .map(x => x.input))
+/*
+prints
+[ 'Trying to only match Go go',
+  'Go go Power Rangers!',
+  'Go go gadget binoculars!' ]
+*/
+
+console.log(  
+    [
+        'Trying to only match Go go',
+        'Go go Power Rangers!',
+        'Go go gadget binoculars!',
+        'Go Teen Titans Go!'
+    ]
+        .map(x => x.match(/Go go.+/))
+        .filter(x => x)
+        .map(x => x.input))
+/*
+prints
+[ 'Go go Power Rangers!', 'Go go gadget binoculars!' ]
+*/
+
+console.log('banana'.match(/an?/g))
+/*
+prints
+[ 'an', 'an', 'a' ]
+*/
+
+console.log('Banana'.match(new RegExp('an?', 'gi'))) 
+/*
+prints
+[ 'an', 'an', 'a' ]
 */

@@ -1,16 +1,37 @@
 console.log('a'.match(/a/))
+//prints [ 'a', index: 0, input: 'a' ]
 
 console.log('don\'t eat boogers'.match(/boogers/))
+/*
+prints
+[ 'boogers', index: 10, input: 'don\'t eat boogers' ]
+*/
 
 console.log(
     'Hello my honey, hello my baby, hello my ragtime gal!'
         .match(/Hello my honey, hello my baby, hello my ragtime gal!/))
+/*
+prints
+[ 'Hello my honey, hello my baby, hello my ragtime gal!',
+  index: 0,
+  input: 'Hello my honey, hello my baby, hello my ragtime gal!' ]
+*/
 
 console.log(
     'Hello my honey, hello my baby, hello my ragtime gal!'
         .match(/my/))
+/*
+prints
+[ 'my',
+  index: 6,
+  input: 'Hello my honey, hello my baby, hello my ragtime gal!' ]
+*/
 
 console.log('doo doo doo doowah!'.match(/doo/g))
+/*
+prints
+[ 'doo', 'doo', 'doo', 'doo' ]
+*/
 
 console.log('I\'m Batman!'.match(/[aeiou]/g))
 

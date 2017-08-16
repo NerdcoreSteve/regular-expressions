@@ -96,42 +96,107 @@ prints
 [ 'And', 'we', 'can', 'match', 'characters' ]
 */
 
+console.log(  
+    'We can also match characters and numbers! 1, 2, 3, 45'
+        .match(/[a-z0-9]+/gi))
+/*
+prints
+[ 'We',
+  'can',
+  'also',
+  'match',
+  'characters',
+  'and',
+  'numbers',
+  '1',
+  '2',
+  '3',
+  '45' ]
+*/
+
 console.log('[1, 2, 1 + 2]'.match(/[\[\+]+/g))
+/*
+prints
+[ '[', '+' ]
+*/
 
 console.log('\\'.match(/\\/))
+/*
+prints
+[ '\\', index: 0, input: '\\' ]
+*/
 
 console.log(
     'Potatoes are my friends, potatoes are my family.'
         .match(/^potatoes/gi))
+/*
+prints
+[ 'Potatoes' ]
+*/
+
 console.log(
     'Family Ties is a good show, but I prefer All In the Family.'
         .match(/family.$/gi))
+/*
+prints
+[ 'Family.' ]
+*/
+
 console.log(
     'The Magic School Bus was a great show, but they really should have asked that kid\'s parents before driving through his digestive system'
         .match(/bu/gi))
+/*
+prints
+
+*/
+
 console.log(
     'The Magic School Bus was a great show, but they really should have asked that kid\'s parents before driving through his digestive system'
         .match(/^bu$/gi))
+/*
+prints
+
+*/
 
 console.log(
     'A baker\'s dozen is 13. Why is that?'
         .match(/\d+/g))
+/*
+prints
+
+*/
 
 console.log(
     'It was the best of times. It was the worst of times'
         .match(/(best|worst)/g))
+/*
+prints
+
+*/
 
 console.log(
     'Twas bryllyg, and ye slythy toves Did gyre and gymble in ye wabe'
         .match(/(bryllyg|slythy|toves|gyre)/g))
+/*
+prints
+
+*/
 
 console.log(
     'I get a banana. You get a kiwi. Your mom is a potato'
         .match(/get a (\w+)/))
+/*
+prints
+
+*/
 
 console.log(
     'I get a banana. You get a kiwi. Your mom is a potato'
         .match(/get a (\w+)/g))
+/*
+prints
+
+*/
 
 const regexGlobalGroupCapture = (regex, input) => {
     var matches, output = []
@@ -145,28 +210,51 @@ console.log(
     regexGlobalGroupCapture(
         /get a (\w+)/g,
         "I get a banana. You get a kiwi. Your mom is a potato"))
+/*
+prints
+
+*/
 
 console.log(
     "name: Clark Kent, occupation: Reporter"
         .replace(/name: (\w+ \w+), occupation: (\w+)/, '$1 is a $2'))
+/*
+prints
+
+*/
 
 console.log(
     'spinalCase("This Is Spinal Tap") should return "this-is-spinal-tap".'
         .replace(
             /(spinalCase\("([\w\s]+)"\) should return "([\w\s\-]+)".)/,
             '    it(\'$1\',\n        () => expect(\'$2\').toEqual(\'$3\'))'))
+/*
+prints
+
+*/
 
 console.log(
     '1. potatoes are my friends 2. You are a potato 3. You are my friend 4. Now and always you are my potato friend'
         .split(/\d+\./))
+/*
+prints
+
+*/
 
 console.log(
     'Princess Peach rules the Mushroom Kingdom'
         .replace(
             /(Princess (?:Peach|Toadstool)) rules the (\w+) Kingdom/,
             'Monarch: $1, Kingdom: $2'))
+/*
+prints
+
+*/
 
 console.log(
     'Banana, bananas, banana, potato, banana. Aren\'t you glad bananas?'
         .match(/banana./gi))
+/*
+prints
 
+*/

@@ -334,4 +334,5 @@ prints
 [ 'an', 'an', 'a' ]
 */
 
-//TODO come up with a regex example where you have to build a regex from a variable
+//TODO write a function that takes a word and some text, it then returns the number of occurrneces of that word in the text.
+const word_occurrence = () => false

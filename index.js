@@ -334,14 +334,4 @@ prints
 [ 'an', 'an', 'a' ]
 */
 
-const
-    parseArguments = (funcName, string) => {
-        const
-            regex = new RegExp(`${funcName}\((.*?)\)`, 'g')
-        return [
-            regex.exec(string),
-            regex.exec(string)
-        ]
-    }
-
-console.log(parseArguments('banana', 'banana(monkey, journalism, pancakes)'))
+//TODO come up with a regex example where you have to build a regex from a variable

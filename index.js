@@ -250,6 +250,15 @@ prints
 */
 
 console.log(
+    ['1. potatoes are my friends 2. You are a potato 3. You are my friend 4. Now and always you are my potato friend']
+        .map(s => s.split(/\d+\./))
+        .map(xs => xs.slice(1))
+        .map(xs => xs.map(s => `    <li>${s}</li>`))
+        .map(xs => ['<ol>'].concat(xs).concat(['</ol>']))
+        .map(xs => xs.join('\n'))
+        [0])
+
+console.log(
     'Princess Peach rules the Mushroom Kingdom'
         .replace(
             /(Princess (?:Peach|Toadstool)) rules the (\w+) Kingdom/,
@@ -265,7 +274,7 @@ console.log(
         'Superman',
         'The Hulk'
     ]
-        .map(x => x.match(/(ma*)/))
+        .map(s => s.match(/(ma*)/))
         .filter(x => x) //filters out no matches
         .map(x => x.input))
 /*
@@ -324,3 +333,15 @@ console.log('Banana'.match(new RegExp('an?', 'gi')))
 prints
 [ 'an', 'an', 'a' ]
 */
+
+const
+    parseArguments = (funcName, string) => {
+        const
+            regex = new RegExp(`${funcName}\((.*?)\)`, 'g')
+        return [
+            regex.exec(string),
+            regex.exec(string)
+        ]
+    }
+
+console.log(parseArguments('banana', 'banana(monkey, journalism, pancakes)'))

@@ -334,5 +334,32 @@ prints
 [ 'an', 'an', 'a' ]
 */
 
-//TODO write a function that takes a word and some text, it then returns the number of occurrneces of that word in the text.
-const word_occurrence = () => false
+const
+    word_occurrence = (word, text) =>
+        text
+            .match(new RegExp(word, 'ig'))
+            .length
+
+console.log(
+    word_occurrence(
+        'the',
+        'The mango is the greatest fruit of all. The banana can\'t even compare.'))
+/*
+prints 3
+*/
+
+console.log(
+    regexGlobalGroupCapture(
+        /this(.*?)\./ig,
+        'I will only match the bit after this: you are a monkey.'
+            + ' This is another sentence.'
+            + ' This potato has gone bad.'
+            + ' The potato is trying to eat this cat.'))
+
+/*
+prints
+[ ': you are a monkey',
+  ' is another sentence',
+  ' potato has gone bad',
+  ' cat' ]
+*/

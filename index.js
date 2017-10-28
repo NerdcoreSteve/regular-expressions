@@ -363,3 +363,47 @@ prints
   ' potato has gone bad',
   ' cat' ]
 */
+
+console.log(
+    [
+        'do do do do wah!',
+        'do go out and clean up the do do',
+        'do dee do dee do do do wah!',
+    ]
+        .map(s => s.match(/(:?do ){3}/g))
+        .filter(x => x)
+        .length)
+
+/*
+prints 2
+*/
+
+console.log(
+    [
+        'argh!',
+        'aaargh!',
+        'aaaaaaaargh!',
+        'aaaaaaaaaaaargh!',
+    ]
+        .map(s => s.match(/a{2,}/))
+        .filter(x => x)
+        .length)
+
+/*
+prints 3
+*/
+
+console.log(
+    [
+        'banana',
+        'banananana',
+        'banananananananana',
+    ]
+        .map(s => s.match(/(?:an?){2,3}/))
+        .filter(x => x)
+        .map(x => x[0]))
+
+/*
+prints
+[ 'anana', 'ananan', 'ananan' ]
+*/
